@@ -1,0 +1,27 @@
+{
+  "name": "qcloudsms",
+  "version": "1.0.0",
+  "description": "a qcloudsdk use es6 and promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unliar/qcloudsms.git"
+  },
+  "keywords": [
+    "qcloudsms",
+    "qcloud",
+    "sms"
+  ],
+  "author": "unliar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unliar/qcloudsms/issues"
+  },
+  "homepage": "https://github.com/unliar/qcloudsms#readme",
+  "devDependencies":{
+	"axios": "^0.16.2"
+  }
+}
