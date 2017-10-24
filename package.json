@@ -1,6 +1,6 @@
 {
   "name": "qcloudsms",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "a qcloudsdk use es6 and promise",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "url": "https://github.com/unliar/qcloudsms/issues"
   },
   "homepage": "https://github.com/unliar/qcloudsms#readme",
-  "devDependencies":{
-	"axios": "^0.16.2"
+  "dependencies": {
+    "axios": "^0.16.2"
   }
 }
