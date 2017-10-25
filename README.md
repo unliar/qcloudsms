@@ -30,13 +30,13 @@ const Qsms=require("qcloudsms")
 const qsms=new Qsms(idnumber,'key')
 ```
 1. singeSend({
-    phoneNumber,
-    msg,
-    msgType = 0,
-    nationCode = "86",
-    extend = "",
-    ext = ""
-  }) 
+      phoneNumber,
+      msg,
+      msgType = 0,
+      nationCode = "86",
+      extend = "",
+      ext = ""
+    }) 
 
 ```
   /**
@@ -59,28 +59,27 @@ const qsms=new Qsms(idnumber,'key')
     extend = "",
     ext = ""
   }).then(res=>{
-    console.log(res)
-    let status=res.data.result  
-    if(status===0){
-    //  do success
+    console.log(res.data)
+    if(res.data.result===0){
+      // do success
     }else{
-     // somethins errors
-     //find your error code in this list
-     //https://cloud.tencent.com/document/product/382/3771
+      //errors
+      //find your error code in this list
+      //https://cloud.tencent.com/document/product/382/3771
     }
   })
 
 ```
 
 2. singleSendWithParams({
-    phoneNumber,
-    tpl_id,
-    params,
-    sign,
-    nationCode = "86",
-    ext = "",
-    extend = ""
-  })
+      phoneNumber,
+      tpl_id,
+      params,
+      sign,
+      nationCode = "86",
+      ext = "",
+      extend = ""
+    })
   ```
   /**
     * 模板单发短信
@@ -101,17 +100,89 @@ const qsms=new Qsms(idnumber,'key')
         tpl_id: 4266,
         sign: '远浅君'
       }).then(res => {
-            console.log(res)
-            let status=res.data.result  
-            if(status===0){
-            //  do success
+            console.log(res.data)
+            if(res.data.result===0){
+              //  do success
             }else{
-            // somethins errors
-            //find your error code in this list
-            //https://cloud.tencent.com/document/product/382/3771
+              //errors
+              //find your error code in this list
+              //https://cloud.tencent.com/document/product/382/3771
             }
-        })
+        })  
+  ```
+  3. multiSend({
+        phoneNumbers,
+        msg,
+        msgType = 0,
+        nationCode = "86",
+        extend = "",
+        ext = ""
+     })
+  ```
+  /*
+  * 群发短信【仅国内,一次不超过200】
+  * @param {Array} phoneNumbers 群发手机号数组 
+  * @param {string} msg 短信正文，如果需要带签名，签名请使用【】标注
+  * @param {number} msgType 短信类型，0 普通短信，1 营销短信。 默认值:0
+  * @param {string} nationCode 国家码,默认值:"86"
+  * @param {string} extend 扩展字段，默认值:""
+  * @param {string} ext 此字段腾讯云后台服务器会按原样在应答中,默认值:""
+  */
 
+  //demo
+  qsms.multiSend({
+      phoneNumbers: [17603070288, 17788770699],
+      msg: "您的验证码6789，此验证码10分钟内有效，请勿向他人泄露"
+    }).then(res =>{
+      console.log(res.data)
+      if(res.data.result===0){
+        //do success
+      }else{
+        //errors
+        //find your error code in this list
+        //https://cloud.tencent.com/document/product/382/3771
+      }
+    })
 
+  ```
+  4. multiSendWithParams({
+      phoneNumbers,
+      tpl_id,
+      params,
+      sign,
+      nationCode = "86",
+      ext = "",
+      extend = ""
+    }) 
+
+  ```
+  /**
+    * 模板群发短信【仅国内,一次不超过200】
+    * @param {string} phoneNumbers 手机号
+    * @param {number} tpl_id 短信模板参数， 详情：https://console.qcloud.com/sms/smsContent 
+    * @param {array} params 模板参数数组,元素个数请不要超过模板参数个数
+    * @param {string} sign 短信签名
+    * @param {string} nationCode 国家码,默认值:"86"
+    * @param {string} extend 扩展字段，默认值:""
+    * @param {string} ext 此字段腾讯云后台服务器会按原样在应答中,默认值:""
+  */
   
+  //demo
+  qsms.multiSendWithParams({
+      phoneNumbers: [17603070288, 17788770668],
+      params: [4523],
+      tpl_id: 423866,
+      sign: '格隆汇'
+    }).then(res =>{
+        console.log(res.data)
+        if(res.data.result===0){
+          //do success
+          //
+        }else{
+          //errors
+          //find your error code in this list
+          //https://cloud.tencent.com/document/product/382/3771
+        }
+    })
+
   ```
