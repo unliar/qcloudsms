@@ -98,7 +98,7 @@ const qsms=new Qsms(idnumber,'key')
         phoneNumber: 176030703,
         params: [12345],
         tpl_id: 4266,
-        sign: '远浅君'
+        sign: '签名'
       }).then(res => {
             console.log(res.data)
             if(res.data.result===0){
@@ -172,7 +172,7 @@ const qsms=new Qsms(idnumber,'key')
       phoneNumbers: [17603070288, 17788770668],
       params: [4523],
       tpl_id: 423866,
-      sign: '格隆汇'
+      sign: '哈哈'
     }).then(res =>{
         console.log(res.data)
         if(res.data.result===0){
