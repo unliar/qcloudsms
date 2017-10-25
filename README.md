@@ -187,3 +187,40 @@ const qsms=new Qsms(idnumber,'key')
     })
 
   ```
+  暂未测试
+  5. sendVoice({
+        phoneNumber,
+        msg,
+        playtimes = 2,
+        nationCode = "86",
+        ext = ""
+      })
+  ```
+  /* 语音验证码
+  * @param {string} nationCode 国家码,默认值:"86"
+  * @param {string} ext 此字段腾讯云后台服务器会按原样在应答中,默认值:""
+  * @param {number} playtimes 重播次数，默认2，最大3。
+  * @param {number} phoneNumber 手机号码
+  * @param {number|string} msg 验证码，支持英文字母、数字及组合。
+  */
+  ```
+  暂未测试
+  6. sendVoicePrompt({
+        phoneNumber,
+        promptfile,
+        prompttype = 2,
+        nationCode = "86",
+        playtimes = 2,
+        ext = ""
+      })
+
+  ```
+  /*发送语音通知
+  * @param {number} phoneNumber 手机号码
+  * @param {string} promptfile 通知内容，utf8编码，支持中文英文、数字及组合，需要和语音* 内容模版相匹配
+  * @param {number} prompttype 语音类型,目前固定为2
+  * @param {number} playtimes 重播次数，默认2，最大3。
+  * @param {string} nationCode 国家码,默认值:"86"
+  * @param {string} ext 此字段腾讯云后台服务器会按原样在应答中,默认值:""
+  */
+  ```
