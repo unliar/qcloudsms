@@ -84,7 +84,7 @@ const qsms=new Qsms(idnumber,'key')
   /**
     * 模板单发短信
     * @param {string} phoneNumber 手机号
-    * @param {number} tpl_id 短信模板参数， 详情：https://console.qcloud.com/sms/smsContent 
+    * @param {number} tpl_id 短信模板id， 详情：https://console.qcloud.com/sms/smsContent 
     * @param {array} params 模板参数数组,元素个数请不要超过模板参数个数
     * @param {string} sign 短信签名
     * @param {string} nationCode 国家码,默认值:"86"
@@ -121,7 +121,7 @@ const qsms=new Qsms(idnumber,'key')
   ```
   /*
   * 群发短信【仅国内,一次不超过200】
-  * @param {Array} phoneNumbers 群发手机号数组 
+  * @param {array} phoneNumbers 群发手机号数组 
   * @param {string} msg 短信正文，如果需要带签名，签名请使用【】标注
   * @param {number} msgType 短信类型，0 普通短信，1 营销短信。 默认值:0
   * @param {string} nationCode 国家码,默认值:"86"
@@ -158,8 +158,8 @@ const qsms=new Qsms(idnumber,'key')
   ```
   /**
     * 模板群发短信【仅国内,一次不超过200】
-    * @param {string} phoneNumbers 手机号
-    * @param {number} tpl_id 短信模板参数， 详情：https://console.qcloud.com/sms/smsContent 
+    * @param {array} phoneNumbers 群发手机号数组 
+    * @param {number} tpl_id 短信模板id， 详情：https://console.qcloud.com/sms/smsContent 
     * @param {array} params 模板参数数组,元素个数请不要超过模板参数个数
     * @param {string} sign 短信签名
     * @param {string} nationCode 国家码,默认值:"86"
