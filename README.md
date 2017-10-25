@@ -2,8 +2,9 @@
 a qcloudsms sdk  with es6 class and promise
 一个参考腾讯云官方规则封装的更加优雅的短信发送sdk,[官方Demo](https://github.com/qcloudsms/qcloudsms/tree/master/demo/js)
 
-## start 开始使用
 
+## start 开始使用
+[实例Demo](https://github.com/unliar/qcloudsms/blob/master/demo.js)
 ```
 1、install 安装
 
