@@ -1,6 +1,6 @@
 {
   "name": "qcloudsms",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a qcloudsdk use es6 and promise",
   "main": "index.js",
   "scripts": {

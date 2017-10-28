@@ -18,9 +18,21 @@ const Qsms=require("qcloudsms")
 
 const qsms=new Qsms(idnumber,'key')
 
-4,send SMS 调用接口发送短信
+4、send SMS 调用接口发送短信
 
-.......
+5、check result 接收返回结果
+```
+//demo中的res.data值示例
+//result字段为0表示成功
+//非0表示失败原因状态码
+//错误码列表 https://cloud.tencent.com/document/product/382/3771
+{
+  result: 0,
+  errmsg: 'OK',
+  ext: '',
+  callid: '。...' 
+}
+```
 
 ```
 
@@ -187,7 +199,7 @@ const qsms=new Qsms(idnumber,'key')
     })
 
   ```
-  暂未测试
+  
   5. sendVoice({
         phoneNumber,
         msg,
@@ -203,8 +215,21 @@ const qsms=new Qsms(idnumber,'key')
   * @param {number} phoneNumber 手机号码
   * @param {number|string} msg 验证码，支持英文字母、数字及组合。
   */
+  qsms.sendVoice({
+      phoneNumber: 17603070437,
+      msg: "876123"
+    }).then(res => {
+      if(res.data.result===0){
+          //do success
+          //
+        }else{
+          //errors
+          //find your error code in this list
+          //https://cloud.tencent.com/document/product/382/3771
+      }
+    })
   ```
-  暂未测试
+  
   6. sendVoicePrompt({
         phoneNumber,
         promptfile,
@@ -223,4 +248,17 @@ const qsms=new Qsms(idnumber,'key')
   * @param {string} nationCode 国家码,默认值:"86"
   * @param {string} ext 此字段腾讯云后台服务器会按原样在应答中,默认值:""
   */
+  qsms.sendVoicePrompt({
+        phoneNumber: 17603070235,
+        promptfile: "您好雷锋，您的参会申请已经审核通过，请于11点按时参加会议，期待您的到来。"
+      }).then(res => {
+        if(res.data.result===0){
+          //do success
+          //
+        }else{
+          //errors
+          //find your error code in this list
+          //https://cloud.tencent.com/document/product/382/3771
+        }
+      })
   ```
