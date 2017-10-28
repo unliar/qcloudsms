@@ -4,7 +4,12 @@ a qcloudsms sdk  with es6 class and promise
 
 
 ## start 开始使用
-[实例Demo](https://github.com/unliar/qcloudsms/blob/master/demo.js)
+
+> before you start to use this package,you should get this appid and appkey from [TencentCloud](https://cloud.tencent.com/product/sms) ,dont use the phoneNumbers in demos,its just to show you how to run it.
+
+>在使用之前,请先去申请腾讯云短信应用,以便获取必要的appid和appkey,并且需要申请相关的短信签名，短信模板,否则,你将会得到各种错误码返回值。[错误码](https://cloud.tencent.com/document/product/382/3771)
+
+[实例 Demo](https://github.com/unliar/qcloudsms/blob/master/demo.js)
 ```
 1、install 安装
 
