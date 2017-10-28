@@ -21,25 +21,54 @@ const qsms=new Qsms(idnumber,'key')
 4、send SMS 调用接口发送短信
 
 5、check result 接收返回结果
-```
-//demo中的res.data值示例
-//result字段为0表示成功
-//非0表示失败原因状态码
-//错误码列表 https://cloud.tencent.com/document/product/382/3771
+
+
+// demo中的res.data值示例
+// 错误码列表 https://cloud.tencent.com/document/product/382/3771
+
+// 单发返回值
+
+{
+  result: 0, // 成功字段值为0,失败则会显示错误状态码。
+  errmsg: 'OK', //成功字段值为"OK",失败则会显示错误原因
+  ext: '',
+  callid: '...' 
+}
+
+// 群发返回值
+
 {
   result: 0,
   errmsg: 'OK',
   ext: '',
-  callid: '。...' 
+  detail: [{
+      result: 0,
+      errmsg: 'OK',
+      mobile: '177883232323',
+      nationcode: '86',
+      sid: '8:Kdasdasddasdasd20171028',
+      fee: 1
+    },
+    {
+      result: 0,
+      errmsg: 'OK',
+      mobile: '17603073232',
+      nationcode: '86',
+      sid: '8:Lfdasdasds20171028',
+      fee: 1
+    }
+  ]
 }
-```
+
 
 ```
 
 ## methods
 ```
 //demo public import
+
 const Qsms=require("qcloudsms")
+
 const qsms=new Qsms(idnumber,'key')
 ```
 1. singeSend({
