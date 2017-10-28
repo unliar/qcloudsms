@@ -7,7 +7,7 @@ a qcloudsms sdk  with es6 class and promise
 
 > before you start to use this package,you should get this appid and appkey from [TencentCloud](https://cloud.tencent.com/product/sms) ,dont use the phoneNumbers in demos,its just to show you how to run it.
 
->在使用之前,请先去申请腾讯云短信应用,以便获取必要的appid和appkey,并且需要申请相关的短信签名，短信模板,否则,你将会得到各种错误码返回值。[错误码](https://cloud.tencent.com/document/product/382/3771)
+>在使用之前,请先去申请[腾讯云短信应用](https://cloud.tencent.com/product/sms),以便获取必要的appid和appkey,并且需要申请相关的短信签名，短信模板,否则,你将会得到各种错误码返回值。[错误码](https://cloud.tencent.com/document/product/382/3771)
 
 [实例 Demo](https://github.com/unliar/qcloudsms/blob/master/demo.js)
 ```
@@ -21,18 +21,20 @@ const Qsms=require("qcloudsms")
 
 3、init 初始化
 
-const qsms=new Qsms(idnumber,'key')
+const qsms=new Qsms("appid",'appkey')
 
 4、send SMS 调用接口发送短信
 
 5、check result 接收返回结果
-
+```
+## return 返回值 
+> 类型：[Promise](http://es6.ruanyifeng.com/#docs/promise)
+```
 
 // demo中的res.data值示例
 // 错误码列表 https://cloud.tencent.com/document/product/382/3771
 
 // 单发返回值
-
 {
   result: 0, // 成功字段值为0,失败则会显示错误状态码。
   errmsg: 'OK', //成功字段值为"OK",失败则会显示错误原因
@@ -41,7 +43,6 @@ const qsms=new Qsms(idnumber,'key')
 }
 
 // 群发返回值
-
 {
   result: 0,
   errmsg: 'OK',
@@ -64,9 +65,9 @@ const qsms=new Qsms(idnumber,'key')
     }
   ]
 }
-
-
 ```
+
+
 
 ## methods
 ```
